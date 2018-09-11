@@ -12,11 +12,11 @@ import com.learnvest.challenge.input.CollateralPayment;
 import com.learnvest.challenge.input.Tranche;
 import com.learnvest.challenge.output.Output;
 
-public class TrancheOutputCalculator {
+public class CDOCalculator {
 
 	CalculatorFactory factory;
 	
-	TrancheOutputCalculator()
+	CDOCalculator()
 	{
 		factory = new CalculatorFactory();
 	}

@@ -25,14 +25,14 @@ public class JavaCDOImplementation implements JavaChallengeImplementation{
     public Map<Tranche, List<Output>> modelCDO(List<Tranche> tranches, Collateral collateral) {
         
     	List<CollateralPayment> paymentList = CollateralPaymentCalculator.calculateCollateralPayments(collateral);
-    	TrancheOutputCalculator trancheCalc = new TrancheOutputCalculator();    	
+    	CDOCalculator trancheCalc = new CDOCalculator();    	
     	Map<Tranche,List<Output>> trancheOutput = trancheCalc.calculateTrancheOutput(paymentList,  tranches);
 		return trancheOutput;
     }
     
     public Map<Tranche, Double> calculateYTM(Map<Tranche, List<Output>> tranchesWithCFs)
     {
-    	TrancheOutputCalculator trancheCalc = new TrancheOutputCalculator();
+    	CDOCalculator trancheCalc = new CDOCalculator();
     	Map<Tranche,Double> trancheYTMs = trancheCalc.calculateTrancheYTM(tranchesWithCFs);
     	return trancheYTMs;
     }
